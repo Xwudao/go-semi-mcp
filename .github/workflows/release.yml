@@ -1,0 +1,110 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.24.2'
+
+    - name: Get dependencies
+      run: go mod download
+
+    - name: Build for Linux
+      run: |
+        GOOS=linux GOARCH=amd64 go build -o go-semi-mcp-linux-amd64 main.go
+        GOOS=linux GOARCH=arm64 go build -o go-semi-mcp-linux-arm64 main.go
+
+    - name: Build for Windows
+      run: |
+        GOOS=windows GOARCH=amd64 go build -o go-semi-mcp-windows-amd64.exe main.go
+        GOOS=windows GOARCH=arm64 go build -o go-semi-mcp-windows-arm64.exe main.go
+
+    - name: Build for macOS
+      run: |
+        GOOS=darwin GOARCH=amd64 go build -o go-semi-mcp-darwin-amd64 main.go
+        GOOS=darwin GOARCH=arm64 go build -o go-semi-mcp-darwin-arm64 main.go
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      id: create_release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Linux AMD64
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./go-semi-mcp-linux-amd64
+        asset_name: go-semi-mcp-linux-amd64
+        asset_content_type: application/octet-stream
+
+    - name: Upload Linux ARM64
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./go-semi-mcp-linux-arm64
+        asset_name: go-semi-mcp-linux-arm64
+        asset_content_type: application/octet-stream
+
+    - name: Upload Windows AMD64
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./go-semi-mcp-windows-amd64.exe
+        asset_name: go-semi-mcp-windows-amd64.exe
+        asset_content_type: application/octet-stream
+
+    - name: Upload Windows ARM64
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./go-semi-mcp-windows-arm64.exe
+        asset_name: go-semi-mcp-windows-arm64.exe
+        asset_content_type: application/octet-stream
+
+    - name: Upload macOS AMD64
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./go-semi-mcp-darwin-amd64
+        asset_name: go-semi-mcp-darwin-amd64
+        asset_content_type: application/octet-stream
+
+    - name: Upload macOS ARM64
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./go-semi-mcp-darwin-arm64
+        asset_name: go-semi-mcp-darwin-arm64
+        asset_content_type: application/octet-stream
