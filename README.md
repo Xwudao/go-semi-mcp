@@ -20,10 +20,10 @@
 2. 运行服务：
 
    ```bash
-   go run main.go
+   go build main.go
    ```
 
-   服务将通过 stdio 启动 MCP 服务。
+   生成的main.exe即可使用stdio（command）方式进行调用。
 
 ## 主要依赖
 
