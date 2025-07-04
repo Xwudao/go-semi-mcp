@@ -8,3 +8,7 @@ var GetComponentUsageTool = mcp.NewTool("get component usage",
 	mcp.WithDescription("Get the usage of a specific component in the Semi-Design library"),
 	mcp.WithString("component_name", mcp.Description("The name of the component to get usage for. The Name must be like ComponentName"), mcp.Required()),
 )
+
+var GetTokenTool = mcp.NewTool("get token",
+	mcp.WithDescription("Get the token of the Semi-Design library. Include css variables and their values."),
+)

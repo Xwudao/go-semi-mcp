@@ -39,25 +39,19 @@ jobs:
         GOOS=darwin GOARCH=arm64 go build -o go-semi-mcp-darwin-arm64 main.go
 
     - name: Create Release
-      uses: actions/create-release@v1
-      id: create_release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v2
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        files: |
+          go-semi-mcp-linux-amd64
+          go-semi-mcp-linux-arm64
+          go-semi-mcp-windows-amd64.exe
+          go-semi-mcp-windows-arm64.exe
+          go-semi-mcp-darwin-amd64
+          go-semi-mcp-darwin-arm64
         draft: false
         prerelease: false
-
-    - name: Upload Linux AMD64
-      uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./go-semi-mcp-linux-amd64
-        asset_name: go-semi-mcp-linux-amd64
-        asset_content_type: application/octet-stream
 
     - name: Upload Linux ARM64
       uses: actions/upload-release-asset@v1

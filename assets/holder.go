@@ -2,6 +2,9 @@ package assets
 
 import _ "embed"
 
+//go:embed token.txt
+var Token string
+
 //go:embed Divider.md
 var DividerMD string
 

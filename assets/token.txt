@@ -1,0 +1,197 @@
+# Semi Design Tokens Reference
+
+## 基础色 (Base Colors)
+# 基于品牌色动态生成的16个色相梯度色盘，每个色相包含10个层级(0-9)
+# 格式: --semi-{color}-{level}
+# Colors: red, pink, purple, violet, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, grey
+# Levels: 0(最浅) - 9(最深)
+
+## 功能色 (Functional Colors)
+
+### 主要颜色 - Primary
+--semi-color-primary: rgba(var(--semi-blue-5), 1)
+--semi-color-primary-hover: rgba(var(--semi-blue-6), 1)
+--semi-color-primary-active: rgba(var(--semi-blue-7), 1)
+--semi-color-primary-disabled: rgba(var(--semi-blue-2), 1)
+--semi-color-primary-light-default: rgba(var(--semi-blue-0), 1)
+--semi-color-primary-light-hover: rgba(var(--semi-blue-1), 1)
+--semi-color-primary-light-active: rgba(var(--semi-blue-2), 1)
+
+### 次要颜色 - Secondary
+--semi-color-secondary: rgba(var(--semi-light-blue-5), 1)
+--semi-color-secondary-hover: rgba(var(--semi-light-blue-6), 1)
+--semi-color-secondary-active: rgba(var(--semi-light-blue-7), 1)
+--semi-color-secondary-disabled: rgba(var(--semi-light-blue-2), 1)
+--semi-color-secondary-light-default: rgba(var(--semi-light-blue-0), 1)
+--semi-color-secondary-light-hover: rgba(var(--semi-light-blue-1), 1)
+--semi-color-secondary-light-active: rgba(var(--semi-light-blue-2), 1)
+
+### 第三颜色 - Tertiary
+--semi-color-tertiary: rgba(var(--semi-grey-5), 1)
+--semi-color-tertiary-hover: rgba(var(--semi-grey-6), 1)
+--semi-color-tertiary-active: rgba(var(--semi-grey-7), 1)
+--semi-color-tertiary-light-default: rgba(var(--semi-grey-0), 1)
+--semi-color-tertiary-light-hover: rgba(var(--semi-grey-1), 1)
+--semi-color-tertiary-light-active: rgba(var(--semi-grey-2), 1)
+
+### 信息 - Info
+--semi-color-info: rgba(var(--semi-blue-5), 1)
+--semi-color-info-hover: rgba(var(--semi-blue-6), 1)
+--semi-color-info-active: rgba(var(--semi-blue-7), 1)
+--semi-color-info-disabled: rgba(var(--semi-blue-2), 1)
+--semi-color-info-light-default: rgba(var(--semi-blue-0), 1)
+--semi-color-info-light-hover: rgba(var(--semi-blue-1), 1)
+--semi-color-info-light-active: rgba(var(--semi-blue-2), 1)
+
+### 成功 - Success
+--semi-color-success: rgba(var(--semi-green-5), 1)
+--semi-color-success-hover: rgba(var(--semi-green-6), 1)
+--semi-color-success-active: rgba(var(--semi-green-7), 1)
+--semi-color-success-disabled: rgba(var(--semi-green-2), 1)
+--semi-color-success-light-default: rgba(var(--semi-green-0), 1)
+--semi-color-success-light-hover: rgba(var(--semi-green-1), 1)
+--semi-color-success-light-active: rgba(var(--semi-green-2), 1)
+
+### 警示 - Warning
+--semi-color-warning: rgba(var(--semi-orange-5), 1)
+--semi-color-warning-hover: rgba(var(--semi-orange-6), 1)
+--semi-color-warning-active: rgba(var(--semi-orange-7), 1)
+--semi-color-warning-light-default: rgba(var(--semi-orange-0), 1)
+--semi-color-warning-light-hover: rgba(var(--semi-orange-1), 1)
+--semi-color-warning-light-active: rgba(var(--semi-orange-2), 1)
+
+### 危险 - Danger
+--semi-color-danger: rgba(var(--semi-red-5), 1)
+--semi-color-danger-hover: rgba(var(--semi-red-6), 1)
+--semi-color-danger-active: rgba(var(--semi-red-7), 1)
+--semi-color-danger-light-default: rgba(var(--semi-red-0), 1)
+--semi-color-danger-light-hover: rgba(var(--semi-red-1), 1)
+--semi-color-danger-light-active: rgba(var(--semi-red-2), 1)
+
+### 文本与图标颜色 - Text
+--semi-color-text-0: rgba(var(--semi-grey-9), 1)          # 最主要
+--semi-color-text-1: rgba(var(--semi-grey-9), .8)         # 稍次要
+--semi-color-text-2: rgba(var(--semi-grey-9), .62)        # 次要
+--semi-color-text-3: rgba(var(--semi-grey-9), .35)        # 最次要
+
+### 链接色 - Link
+--semi-color-link: rgba(var(--semi-blue-5), 1)
+--semi-color-link-hover: rgba(var(--semi-blue-6), 1)
+--semi-color-link-active: rgba(var(--semi-blue-7), 1)
+--semi-color-link-visited: rgba(var(--semi-blue-5), 1)
+
+### 背景色 - Background
+--semi-color-bg-0: rgba(var(--semi-white), 1)             # 最下层
+--semi-color-bg-1: rgba(var(--semi-white), 1)             # 次下层
+--semi-color-bg-2: rgba(var(--semi-white), 1)             # 中间层
+--semi-color-bg-3: rgba(var(--semi-white), 1)             # 次上层
+--semi-color-bg-4: rgba(var(--semi-white), 1)             # 最上层
+
+### 填充色 - Fill
+--semi-color-fill-0: rgba(var(--semi-grey-8), .05)        # 默认态
+--semi-color-fill-1: rgba(var(--semi-grey-8), .09)        # 悬浮态
+--semi-color-fill-2: rgba(var(--semi-grey-8), .13)        # 激活态
+
+### 描边色 - Border
+--semi-color-border: rgba(var(--semi-grey-9), .08)
+
+### 禁用态 - Disabled
+--semi-color-disabled-text: rgba(var(--semi-grey-9), .35)
+--semi-color-disabled-border: rgba(var(--semi-grey-1), 1)
+--semi-color-disabled-bg: rgba(var(--semi-grey-1), 1)
+--semi-color-disabled-fill: rgba(var(--semi-grey-8), .04)
+
+### 拟阴影色 - Shadow
+--semi-color-shadow: rgba(var(--semi-black), .04)
+
+## 字体排版 (Typography)
+
+### 字号 - Font Size
+$font-size-small: 12px          # 小文本
+$font-size-regular: 14px        # 常规文本
+$font-size-header-6: 16px       # 六级标题
+$font-size-header-5: 18px       # 五级标题
+$font-size-header-4: 20px       # 四级标题
+$font-size-header-3: 24px       # 三级标题
+$font-size-header-2: 28px       # 二级标题
+$font-size-header-1: 32px       # 一级标题
+
+### 字重 - Font Weight
+$font-weight-light: 200         # 轻
+$font-weight-regular: 400       # 常规
+$font-weight-bold: 600          # 加粗
+
+### 字体 - Font Family
+font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family-regular: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI'
+
+## 圆角 (Border Radius)
+--semi-border-radius-extra-small: 3px      # 超小圆角
+--semi-border-radius-small: 3px            # 小圆角
+--semi-border-radius-medium: 6px           # 中圆角
+--semi-border-radius-large: 12px           # 大圆角
+--semi-border-radius-circle: 50%           # 全圆角
+--semi-border-radius-full: 9999px          # 全尺寸圆角
+
+## 阴影 (Shadow)
+--semi-shadow-elevated: 0 0 1px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .1)
+
+## 尺寸 (Dimensions)
+
+### 高度 - Height
+$height-control-small: 24px       # 表单项 - 小尺寸
+$height-control-default: 32px     # 表单项 - 默认尺寸
+$height-control-large: 40px       # 表单项 - 大尺寸
+
+### 描边尺寸 - Border Thickness
+$border-thickness: 0              # 零
+$border-thickness-control: 1px    # 默认状态
+$border-thickness-control-focus: 1px  # focus状态
+
+### 图标尺寸 - Icon Width
+$width-icon-extra-small: 8px      # 超小
+$width-icon-small: 12px           # 小
+$width-icon-medium: 16px          # 中
+$width-icon-large: 20px           # 大
+$width-icon-extra-large: 24px     # 超大
+
+## 间距 (Spacing)
+$spacing-none: 0                  # 零
+$spacing-super-tight: 2px         # 极紧凑
+$spacing-extra-tight: 4px         # 超紧凑
+$spacing-tight: 8px               # 紧凑
+$spacing-base-tight: 12px         # 默认(偏紧凑)
+$spacing-base: 16px               # 默认
+$spacing-base-loose: 20px         # 默认(偏宽松)
+$spacing-loose: 24px              # 宽松
+$spacing-extra-loose: 32px        # 超宽松
+$spacing-super-loose: 40px        # 极宽松
+
+## Z-Index
+$z-portal: 1                      # 抽象插槽
+$z-affix: 10                      # 固定位置元素
+$z-backtop: 10                    # 返回顶部
+$z-badge: 10                      # badge
+$z-table-fixed: 101               # table fixed column
+$z-modal: 1000                    # modal
+$z-modal-mask: 1000               # modal 遮罩
+$z-toast: 1010                    # toast
+$z-notification: 1010             # notification
+$z-popover: 1030                  # popover
+
+## 动画 (Animation)
+--semi-transition_duration-slowest: 0ms
+--semi-transition_duration-slower: 0ms
+--semi-transition_duration-slow: 0ms
+--semi-transition_duration-normal: 0ms
+--semi-transition_duration-fast: 0ms
+--semi-transition_duration-faster: 0ms
+--semi-transition_duration-fastest: 0ms
+--semi-transition_duration-none: 0ms
+
+## 使用说明
+# 1. CSS变量使用 var() 函数调用，如: color: var(--semi-color-primary);
+# 2. SCSS变量直接使用，如: font-size: $font-size-regular;
+# 3. 基础色变量格式: --semi-{color}-{level}，其中level为0-9
+# 4. 支持明暗模式切换，使用Semi Design变量可实现一键切换
+# 5. 可通过 Semi DSM 定制主题和变量值
