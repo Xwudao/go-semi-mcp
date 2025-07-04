@@ -29,7 +29,7 @@ var CascaderMD string
 //go:embed Button.md
 var ButtonMD string
 
-//go:embed CheckBox.md
+//go:embed Checkbox.md
 var CheckBoxMD string
 
 //go:embed DatePicker.md
