@@ -1,91 +1,56 @@
-# Semi Design 组件总览
+# List 列表
 
-## 基础
-- Divider 分割线
-- Grid 栅格
-- Icon 图标
-- Layout 布局
-- Space 间距
-- Typography 版式
+基础列表组件，支持多种布局、栅格、分页、加载等功能。
 
-## Plus 组件
-- CodeHighlight 代码高亮
-- Markdown 渲染器
-- Lottie 动画
-- Chat 对话
-- HotKeys 快捷键
-- DragMove 拖拽移动
-- JsonViewer Json编辑器
-- AudioPlayer 音频播放器
-- VideoPlayer 视频播放器
+## API 参考
 
-## 输入类
-- AutoComplete 自动完成
-- Cascader 级联选择
-- Button 按钮
-- Checkbox 复选框
-- DatePicker 日期选择器
-- Form 表单
-- Input 输入框
-- InputNumber 数字输入框
-- PinCode 验证码输入
-- Radio 单选框
-- Rating 评分
-- Select 选择器
-- Slider 滑动选择器
-- Switch 开关
-- TagInput 标签输入框
-- TimePicker 时间选择器
-- Transfer 穿梭框
-- TreeSelect 树选择器
-- Upload 上传
+### List
 
-## 导航类
-- Anchor 锚点
-- BackTop 回到顶部
-- Breadcrumb 面包屑
-- Navigation 导航
-- Pagination 翻页器
-- Steps 步骤
-- Tabs 标签栏
-- Tree 树形控件
+| 属性           | 说明                         | 类型           | 默认值   |
+| -------------- | ---------------------------- | -------------- | -------- |
+| bordered       | 是否显示边框                 | boolean        | false    |
+| className      | 自定义样式类名               | string         | -        |
+| dataSource     | 列表数据源                   | any[]          | -        |
+| emptyContent   | 空列表的展示内容             | ReactNode      | -        |
+| footer         | 列表底部                     | ReactNode      | -        |
+| grid           | 列表栅格配置                 | Grid           | -        |
+| header         | 列表头部                     | ReactNode      | -        |
+| layout         | 列表布局 vertical/horizontal | string         | vertical |
+| loadMore       | 加载更多的按钮               | ReactNode      | -        |
+| loading        | 是否处于加载中               | boolean        | false    |
+| renderItem     | 自定义渲染列表项             | (item, ind) => ReactNode | - |
+| size           | 列表尺寸 small/default/large | string         | default  |
+| split          | 是否展示分割线               | boolean        | true     |
+| style          | 自定义样式对象               | CSSProperties  | -        |
+| onClick        | 点击回调事件                 | (e: event) => void | -    |
+| onRightClick   | 右键点击回调事件             | (e: event) => void | -    |
 
-## 展示类
-- Avatar 头像
-- Badge 徽章
-- Calendar 日历
-- Card 卡片
-- Carousel 轮播图
-- Collapse 折叠面板
-- Collapsible 折叠
-- Descriptions 描述列表
-- Dropdown 下拉框
-- Empty 空状态
-- Highlight 高亮文本
-- Image 图片
-- Cropper 图片裁切
-- List 列表
-- Modal 模态对话框
-- OverflowList 折叠列表
-- Popover 气泡卡片
-- ScrollList 滚动列表
-- SideSheet 滑动侧边栏
-- Table 表格
-- Tag 标签
-- Timeline 时间轴
-- Tooltip 工具提示
-- UserGuide 用户引导
-- VChart 图表
+#### List grid props
 
-## 反馈类
-- Banner 通知横幅
-- Notification 通知
-- Popconfirm 气泡确认框
-- Progress 进度条
-- Skeleton 骨架屏
-- Spin 加载器
-- Toast 提示
+| 属性 | 说明 | 类型 | 默认值 |
+| ---- | ---- | ---- | ------ |
+| span | 栅格占位格数 | number | - |
+| gutter | 栅格间隔 | number | 0 |
+| xs/sm/md/lg/xl/xxl | 响应式栅格 | number/object | - |
 
-## 其他
-- ConfigProvider 全局配置
-- LocaleProvider 多语言
+### List.Item
+
+| 属性      | 说明                                   | 类型      | 默认值     |
+| --------- | -------------------------------------- | --------- | ---------- |
+| align     | 头内容和主体内容的垂直对齐方式         | string    | flex-start |
+| className | 自定义样式类名                         | string    | -          |
+| extra     | 列表项附加内容                         | ReactNode | -          |
+| header    | 列表项头内容                           | ReactNode | -          |
+| main      | 列表项主体内容                         | ReactNode | -          |
+| style     | 自定义样式对象                         | CSSProperties | -      |
+| onClick   | 点击回调事件                           | (e: event) => void | -   |
+| onRightClick | 右键点击回调事件                    | (e: event) => void | -   |
+
+---
+
+## 设计变量
+
+| 变量 | 默认值 | 用法 |
+| ---- | ------ | ---- |
+| $color-list_default-border-default | var(--semi-color-border) | 列表描边颜色 |
+| $color-list_empty-text-default | var(--semi-color-text-2) | 空状态下列表文字颜色 |

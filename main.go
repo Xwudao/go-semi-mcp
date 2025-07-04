@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/Xwudao/semi-mcp/assets"
 	"github.com/Xwudao/semi-mcp/tools"
@@ -24,7 +25,12 @@ func main() {
 
 	// Add the calculator handler
 	s.AddTool(tools.ListTool, func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
-		return mcp.NewToolResultText(assets.ListMD), nil
+		var result []string
+		for _, cmp := range assets.Components {
+			result = append(result, cmp.Name)
+		}
+
+		return mcp.NewToolResultText(strings.Join(result, "\n\n")), nil
 	})
 	s.AddTool(tools.GetComponentUsageTool, func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
 		cmpName, err := request.RequireString("component_name")
