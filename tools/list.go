@@ -12,3 +12,7 @@ var GetComponentUsageTool = mcp.NewTool("get component usage",
 var GetTokenTool = mcp.NewTool("get token",
 	mcp.WithDescription("Get the token of the Semi-Design library. Include css variables and their values."),
 )
+
+var GetCSSVariablesTool = mcp.NewTool("get css variables",
+	mcp.WithDescription("Get the CSS variables of the Semi-Design library. Include css variables and their values."),
+)

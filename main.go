@@ -36,6 +36,10 @@ func main() {
 		// Return the token content
 		return mcp.NewToolResultText(assets.Token), nil
 	})
+	s.AddTool(tools.GetCSSVariablesTool, func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
+		// Return the CSS variables content
+		return mcp.NewToolResultText(assets.CSSVariables), nil
+	})
 	s.AddTool(tools.GetComponentUsageTool, func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
 		cmpName, err := request.RequireString("component_name")
 		if err != nil {
