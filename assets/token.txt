@@ -1,7 +1,14 @@
 # Semi Design Tokens Reference
 
+Semi Design Tokens 设计变量实际上是将设计中的基础元素与具体的样式进行解耦。
+对于设计师来说，如果产品的风格需要迭代更新，比如需要更新危险的功能色，即 color-danger，只需要修改其对应的颜色默认值，既可以完成整套产品的 UI 迭代。
+对于研发来说，为了配合产品风格的更新迭代，使用 Design Token 时可以更快速地完成所有组件的样式更新，而无需一处处地进行修改。
+
 ## 基础色 (Base Colors)
-# 基于品牌色动态生成的16个色相梯度色盘，每个色相包含10个层级(0-9)
+基于品牌色动态生成，包含 160 个颜色在内的，16 个不同色相的梯度色盘。
+通常情况下，我们用使用基础色中的颜色来进一步定义功能色。
+你可以在 Semi DSM 配置你的产品品牌色，动态生成新的基础色盘。
+
 # 格式: --semi-{color}-{level}
 # Colors: red, pink, purple, violet, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, grey
 # Levels: 0(最浅) - 9(最深)
@@ -9,187 +16,218 @@
 ## 功能色 (Functional Colors)
 
 ### 主要颜色 - Primary
---semi-color-primary: rgba(var(--semi-blue-5), 1)
---semi-color-primary-hover: rgba(var(--semi-blue-6), 1)
---semi-color-primary-active: rgba(var(--semi-blue-7), 1)
---semi-color-primary-disabled: rgba(var(--semi-blue-2), 1)
---semi-color-primary-light-default: rgba(var(--semi-blue-0), 1)
---semi-color-primary-light-hover: rgba(var(--semi-blue-1), 1)
---semi-color-primary-light-active: rgba(var(--semi-blue-2), 1)
+用户界面主强调色及各交互态颜色，通常用于主操作按钮等
+--semi-color-primary: rgba(var(--semi-blue-5), 1)                    # 主要颜色。仅在需要非常强调的情况下使用
+--semi-color-primary-hover: rgba(var(--semi-blue-6), 1)              # 主要颜色悬浮态
+--semi-color-primary-active: rgba(var(--semi-blue-7), 1)             # 主要颜色激活态
+--semi-color-primary-disabled: rgba(var(--semi-blue-2), 1)           # 主要颜色禁用态
+--semi-color-primary-light-default: rgba(var(--semi-blue-0), 1)      # 浅版主要颜色（多用于背景）
+--semi-color-primary-light-hover: rgba(var(--semi-blue-1), 1)        # 浅版主要颜色悬浮态
+--semi-color-primary-light-active: rgba(var(--semi-blue-2), 1)       # 浅版主要颜色激活态
 
 ### 次要颜色 - Secondary
---semi-color-secondary: rgba(var(--semi-light-blue-5), 1)
---semi-color-secondary-hover: rgba(var(--semi-light-blue-6), 1)
---semi-color-secondary-active: rgba(var(--semi-light-blue-7), 1)
---semi-color-secondary-disabled: rgba(var(--semi-light-blue-2), 1)
---semi-color-secondary-light-default: rgba(var(--semi-light-blue-0), 1)
---semi-color-secondary-light-hover: rgba(var(--semi-light-blue-1), 1)
---semi-color-secondary-light-active: rgba(var(--semi-light-blue-2), 1)
+次要颜色，强调作用次于主要颜色，但仍然具有强调作用
+--semi-color-secondary: rgba(var(--semi-light-blue-5), 1)            # 次要颜色
+--semi-color-secondary-hover: rgba(var(--semi-light-blue-6), 1)      # 次要颜色悬浮态
+--semi-color-secondary-active: rgba(var(--semi-light-blue-7), 1)     # 次要颜色激活态
+--semi-color-secondary-disabled: rgba(var(--semi-light-blue-2), 1)   # 次要颜色禁用态
+--semi-color-secondary-light-default: rgba(var(--semi-light-blue-0), 1)  # 浅版次要颜色（多用于背景）
+--semi-color-secondary-light-hover: rgba(var(--semi-light-blue-1), 1)    # 浅版次要颜色悬浮态
+--semi-color-secondary-light-active: rgba(var(--semi-light-blue-2), 1)   # 浅版次要颜色激活态
 
 ### 第三颜色 - Tertiary
---semi-color-tertiary: rgba(var(--semi-grey-5), 1)
---semi-color-tertiary-hover: rgba(var(--semi-grey-6), 1)
---semi-color-tertiary-active: rgba(var(--semi-grey-7), 1)
---semi-color-tertiary-light-default: rgba(var(--semi-grey-0), 1)
---semi-color-tertiary-light-hover: rgba(var(--semi-grey-1), 1)
---semi-color-tertiary-light-active: rgba(var(--semi-grey-2), 1)
+用户界面中非强调色及各交互态颜色，通常用于常规、非强调功能操作按钮等
+--semi-color-tertiary: rgba(var(--semi-grey-5), 1)                   # 第三颜色，可以在页面上多次使用
+--semi-color-tertiary-hover: rgba(var(--semi-grey-6), 1)             # 第三颜色悬浮态
+--semi-color-tertiary-active: rgba(var(--semi-grey-7), 1)            # 第三颜色激活态
+--semi-color-tertiary-light-default: rgba(var(--semi-grey-0), 1)     # 浅版第三颜色（多用于背景）
+--semi-color-tertiary-light-hover: rgba(var(--semi-grey-1), 1)       # 浅版第三颜色悬浮态
+--semi-color-tertiary-light-active: rgba(var(--semi-grey-2), 1)      # 浅版第三颜色激活态
 
 ### 信息 - Info
---semi-color-info: rgba(var(--semi-blue-5), 1)
---semi-color-info-hover: rgba(var(--semi-blue-6), 1)
---semi-color-info-active: rgba(var(--semi-blue-7), 1)
---semi-color-info-disabled: rgba(var(--semi-blue-2), 1)
---semi-color-info-light-default: rgba(var(--semi-blue-0), 1)
---semi-color-info-light-hover: rgba(var(--semi-blue-1), 1)
---semi-color-info-light-active: rgba(var(--semi-blue-2), 1)
+通常用于表达客观、中立信息，在带有上述语义的场景下使用
+--semi-color-info: rgba(var(--semi-blue-5), 1)                       # 信息色
+--semi-color-info-hover: rgba(var(--semi-blue-6), 1)                 # 信息色悬浮态
+--semi-color-info-active: rgba(var(--semi-blue-7), 1)                # 信息色激活态
+--semi-color-info-disabled: rgba(var(--semi-blue-2), 1)              # 信息色禁用态
+--semi-color-info-light-default: rgba(var(--semi-blue-0), 1)         # 浅版信息色（多用于背景）
+--semi-color-info-light-hover: rgba(var(--semi-blue-1), 1)           # 浅版信息色悬浮态
+--semi-color-info-light-active: rgba(var(--semi-blue-2), 1)          # 浅版信息色激活态
 
 ### 成功 - Success
---semi-color-success: rgba(var(--semi-green-5), 1)
---semi-color-success-hover: rgba(var(--semi-green-6), 1)
---semi-color-success-active: rgba(var(--semi-green-7), 1)
---semi-color-success-disabled: rgba(var(--semi-green-2), 1)
---semi-color-success-light-default: rgba(var(--semi-green-0), 1)
---semi-color-success-light-hover: rgba(var(--semi-green-1), 1)
---semi-color-success-light-active: rgba(var(--semi-green-2), 1)
+通常用于表达成功、完成、开启状态，在带有上述语义的场景下使用
+--semi-color-success: rgba(var(--semi-green-5), 1)                   # 成功色，表示安全、成功、开启的状态
+--semi-color-success-hover: rgba(var(--semi-green-6), 1)             # 成功色悬浮态
+--semi-color-success-active: rgba(var(--semi-green-7), 1)            # 成功色激活态
+--semi-color-success-disabled: rgba(var(--semi-green-2), 1)          # 成功色禁用态
+--semi-color-success-light-default: rgba(var(--semi-green-0), 1)     # 浅版成功色（多用于背景）
+--semi-color-success-light-hover: rgba(var(--semi-green-1), 1)       # 浅版成功色悬浮态
+--semi-color-success-light-active: rgba(var(--semi-green-2), 1)      # 浅版成功色激活态
 
 ### 警示 - Warning
---semi-color-warning: rgba(var(--semi-orange-5), 1)
---semi-color-warning-hover: rgba(var(--semi-orange-6), 1)
---semi-color-warning-active: rgba(var(--semi-orange-7), 1)
---semi-color-warning-light-default: rgba(var(--semi-orange-0), 1)
---semi-color-warning-light-hover: rgba(var(--semi-orange-1), 1)
---semi-color-warning-light-active: rgba(var(--semi-orange-2), 1)
+通常用于表达警告、不安全状态，在带有上述语义的场景下使用
+--semi-color-warning: rgba(var(--semi-orange-5), 1)                  # 警示色，表示警告、不安全的状态
+--semi-color-warning-hover: rgba(var(--semi-orange-6), 1)            # 警示色悬浮态
+--semi-color-warning-active: rgba(var(--semi-orange-7), 1)           # 警示色激活态
+--semi-color-warning-disabled: rgba(var(--semi-orange-2), 1)         # 警示色禁用态
+--semi-color-warning-light-default: rgba(var(--semi-orange-0), 1)    # 浅版警示色（多用于背景）
+--semi-color-warning-light-hover: rgba(var(--semi-orange-1), 1)      # 浅版警示色悬浮态
+--semi-color-warning-light-active: rgba(var(--semi-orange-2), 1)     # 浅版警示色激活态
 
 ### 危险 - Danger
---semi-color-danger: rgba(var(--semi-red-5), 1)
---semi-color-danger-hover: rgba(var(--semi-red-6), 1)
---semi-color-danger-active: rgba(var(--semi-red-7), 1)
---semi-color-danger-light-default: rgba(var(--semi-red-0), 1)
---semi-color-danger-light-hover: rgba(var(--semi-red-1), 1)
---semi-color-danger-light-active: rgba(var(--semi-red-2), 1)
+通常用于表达危险状态，在带有上述语义的场景下使用
+--semi-color-danger: rgba(var(--semi-red-5), 1)                      # 危险色，表示危险的操作、或需要特别注意的危险信息
+--semi-color-danger-hover: rgba(var(--semi-red-6), 1)                # 危险色悬浮态
+--semi-color-danger-active: rgba(var(--semi-red-7), 1)               # 危险色激活态
+--semi-color-danger-disabled: rgba(var(--semi-red-2), 1)             # 危险色禁用态
+--semi-color-danger-light-default: rgba(var(--semi-red-0), 1)        # 浅版危险色（多用于背景）
+--semi-color-danger-light-hover: rgba(var(--semi-red-1), 1)          # 浅版危险色悬浮态
+--semi-color-danger-light-active: rgba(var(--semi-red-2), 1)         # 浅版危险色激活态
 
 ### 文本与图标颜色 - Text
---semi-color-text-0: rgba(var(--semi-grey-9), 1)          # 最主要
---semi-color-text-1: rgba(var(--semi-grey-9), .8)         # 稍次要
---semi-color-text-2: rgba(var(--semi-grey-9), .62)        # 次要
---semi-color-text-3: rgba(var(--semi-grey-9), .35)        # 最次要
+四个不同层级的文本/图标颜色，依次代表产品界面中最主要、次主要、稍次要和最次要的内容
+--semi-color-text-0: rgba(var(--semi-grey-9), 1)          # 文本/图标颜色 - 最主要
+--semi-color-text-1: rgba(var(--semi-grey-9), .8)         # 文本/图标颜色 - 稍次要
+--semi-color-text-2: rgba(var(--semi-grey-9), .62)        # 文本/图标颜色 - 次要
+--semi-color-text-3: rgba(var(--semi-grey-9), .35)        # 文本/图标颜色 - 最次要
 
 ### 链接色 - Link
---semi-color-link: rgba(var(--semi-blue-5), 1)
---semi-color-link-hover: rgba(var(--semi-blue-6), 1)
---semi-color-link-active: rgba(var(--semi-blue-7), 1)
---semi-color-link-visited: rgba(var(--semi-blue-5), 1)
+用于产品中超链接的文本
+--semi-color-link: rgba(var(--semi-blue-5), 1)            # 链接颜色
+--semi-color-link-hover: rgba(var(--semi-blue-6), 1)      # 链接颜色 - 悬浮态
+--semi-color-link-active: rgba(var(--semi-blue-7), 1)     # 链接颜色 - 激活态
+--semi-color-link-visited: rgba(var(--semi-blue-5), 1)    # 链接颜色 - 已访问
 
 ### 背景色 - Background
---semi-color-bg-0: rgba(var(--semi-white), 1)             # 最下层
---semi-color-bg-1: rgba(var(--semi-white), 1)             # 次下层
---semi-color-bg-2: rgba(var(--semi-white), 1)             # 中间层
---semi-color-bg-3: rgba(var(--semi-white), 1)             # 次上层
---semi-color-bg-4: rgba(var(--semi-white), 1)             # 最上层
+应用中各级背景色，包括容器、菜单、导航栏等。在暗色模式下，我们通常用背景色来区分前后层级
+--semi-color-bg-0: rgba(var(--semi-white), 1)             # 背景色 - 最下层（底部页面）
+--semi-color-bg-1: rgba(var(--semi-white), 1)             # 背景色 - 次下层（页面中需要提升的内容）
+--semi-color-bg-2: rgba(var(--semi-white), 1)             # 背景色 - 中间层（模态等容器）
+--semi-color-bg-3: rgba(var(--semi-white), 1)             # 背景色 - 次上层（通知，Toast等）
+--semi-color-bg-4: rgba(var(--semi-white), 1)             # 背景色 - 最上层（特殊）
 
 ### 填充色 - Fill
---semi-color-fill-0: rgba(var(--semi-grey-8), .05)        # 默认态
---semi-color-fill-1: rgba(var(--semi-grey-8), .09)        # 悬浮态
---semi-color-fill-2: rgba(var(--semi-grey-8), .13)        # 激活态
+对于一个元素，如果其所处的容器背景颜色不固定，且这个元素的填充色与最上层背景色的对比度比较小，
+使用填充色作为 backgroundColor，确保这个元素不会"融于"某一级别背景颜色中，如表单控件。
+--semi-color-fill-0: rgba(var(--semi-grey-8), .05)        # 填充色 - 默认态
+--semi-color-fill-1: rgba(var(--semi-grey-8), .09)        # 填充色 - 悬浮态
+--semi-color-fill-2: rgba(var(--semi-grey-8), .13)        # 填充色 - 激活态
 
 ### 描边色 - Border
---semi-color-border: rgba(var(--semi-grey-9), .08)
+界面中带有描边属性的颜色
+--semi-color-border: rgba(var(--semi-grey-9), .08)        # 默认描边颜色
 
 ### 禁用态 - Disabled
---semi-color-disabled-text: rgba(var(--semi-grey-9), .35)
---semi-color-disabled-border: rgba(var(--semi-grey-1), 1)
---semi-color-disabled-bg: rgba(var(--semi-grey-1), 1)
---semi-color-disabled-fill: rgba(var(--semi-grey-8), .04)
+用于界面中各类表达禁用的元素填充，如背景、文本、描边、填充等
+--semi-color-disabled-text: rgba(var(--semi-grey-9), .35) # 禁用态 - 文字
+--semi-color-disabled-border: rgba(var(--semi-grey-1), 1) # 禁用态 - 描边
+--semi-color-disabled-bg: rgba(var(--semi-grey-1), 1)     # 禁用态 - 背景
+--semi-color-disabled-fill: rgba(var(--semi-grey-8), .04) # 禁用态 - 填充
+
+### 常量色 - Static
+界面中不跟随主题及明暗模式切换的颜色
+# 目前暂无常量色变量定义
 
 ### 拟阴影色 - Shadow
---semi-color-shadow: rgba(var(--semi-black), .04)
+浅阴影，通过 border 模拟的扁平阴影效果，主要用在 Table 组件
+--semi-color-shadow: rgba(var(--semi-black), .04)         # 用于模拟描边的阴影颜色
 
 ## 字体排版 (Typography)
+字体排版用来传达信息内容，并界面看起来有秩序
 
 ### 字号 - Font Size
-$font-size-small: 12px          # 小文本
-$font-size-regular: 14px        # 常规文本
-$font-size-header-6: 16px       # 六级标题
-$font-size-header-5: 18px       # 五级标题
-$font-size-header-4: 20px       # 四级标题
-$font-size-header-3: 24px       # 三级标题
-$font-size-header-2: 28px       # 二级标题
-$font-size-header-1: 32px       # 一级标题
+决定不同层级文本的大小
+$font-size-small: 12px          # 小文本字号
+$font-size-regular: 14px        # 常规文本字号
+$font-size-header-6: 16px       # 六级标题字号
+$font-size-header-5: 18px       # 五级标题字号
+$font-size-header-4: 20px       # 四级标题字号
+$font-size-header-3: 24px       # 三级标题字号
+$font-size-header-2: 28px       # 二级标题字号
+$font-size-header-1: 32px       # 一级标题字号
 
 ### 字重 - Font Weight
-$font-weight-light: 200         # 轻
-$font-weight-regular: 400       # 常规
-$font-weight-bold: 600          # 加粗
+决定不同层级文本的粗细
+$font-weight-light: 200         # 字重 - 轻
+$font-weight-regular: 400       # 字重 - 常规
+$font-weight-bold: 600          # 字重 - 加粗
 
-### 字体 - Font Family
 font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif
 $font-family-regular: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI'
 
 ## 圆角 (Border Radius)
---semi-border-radius-extra-small: 3px      # 超小圆角
---semi-border-radius-small: 3px            # 小圆角
---semi-border-radius-medium: 6px           # 中圆角
---semi-border-radius-large: 12px           # 大圆角
---semi-border-radius-circle: 50%           # 全圆角
---semi-border-radius-full: 9999px          # 全尺寸圆角
+使用圆角来描述容器与界面元素的轮廓，从一定程度决定产品的视觉调性
+--semi-border-radius-extra-small: 3px      # 超小圆角，用于 checkbox 内圆角
+--semi-border-radius-small: 3px            # 小圆角, 用于 button、tag、tabs 等大多数组件, 比较常用
+--semi-border-radius-medium: 6px           # 中圆角, 用于 dropdown、scrollist、transfer 等菜单类组件
+--semi-border-radius-large: 12px           # 大圆角, 用于 modal
+--semi-border-radius-circle: 50%           # 全圆角, 用于 avatar, badge 等组件
+--semi-border-radius-full: 9999px          # 用于创建全尺寸圆角，如胶囊标签等
 
 ## 阴影 (Shadow)
---semi-shadow-elevated: 0 0 1px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .1)
+阴影通常用来表达界面元素的层级，阴影越重的元素距离用户越近
+--semi-shadow-elevated: 0 0 1px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .1)  # 用于toast, modal, popover等需要提升层级的界面元素
 
 ## 尺寸 (Dimensions)
+尺寸变量被应用在各个组件及内部元素中，用来调整控件的大小、描边的粗细、图标的尺寸等
 
 ### 高度 - Height
-$height-control-small: 24px       # 表单项 - 小尺寸
-$height-control-default: 32px     # 表单项 - 默认尺寸
-$height-control-large: 40px       # 表单项 - 大尺寸
+$height-control-small: 24px       # 表单项高度 - 小尺寸
+$height-control-default: 32px     # 表单项高度 - 默认尺寸
+$height-control-large: 40px       # 表单项高度 - 大尺寸
 
 ### 描边尺寸 - Border Thickness
-$border-thickness: 0              # 零
-$border-thickness-control: 1px    # 默认状态
-$border-thickness-control-focus: 1px  # focus状态
+$border-thickness: 0              # 描边宽度 - 零
+$border-thickness-control: 1px    # 描边宽度 - 默认状态（checkbox 等）
+$border-thickness-control-focus: 1px  # 描边宽度 - focus状态（checkbox 等）
 
 ### 图标尺寸 - Icon Width
-$width-icon-extra-small: 8px      # 超小
-$width-icon-small: 12px           # 小
-$width-icon-medium: 16px          # 中
-$width-icon-large: 20px           # 大
-$width-icon-extra-large: 24px     # 超大
+$width-icon-extra-small: 8px      # 图标尺寸 - 超小
+$width-icon-small: 12px           # 图标尺寸 - 小
+$width-icon-medium: 16px          # 图标尺寸 - 中
+$width-icon-large: 20px           # 图标尺寸 - 大
+$width-icon-extra-large: 24px     # 图标尺寸 - 超大
 
 ## 间距 (Spacing)
-$spacing-none: 0                  # 零
-$spacing-super-tight: 2px         # 极紧凑
-$spacing-extra-tight: 4px         # 超紧凑
-$spacing-tight: 8px               # 紧凑
-$spacing-base-tight: 12px         # 默认(偏紧凑)
-$spacing-base: 16px               # 默认
-$spacing-base-loose: 20px         # 默认(偏宽松)
-$spacing-loose: 24px              # 宽松
-$spacing-extra-loose: 32px        # 超宽松
-$spacing-super-loose: 40px        # 极宽松
+间距变量被应用在各个组件内部，或组件与组件之间，用来调整产品整体的密集和紧凑程度
+$spacing-none: 0                  # 间距 - 零
+$spacing-super-tight: 2px         # 间距 - 极紧凑尺寸内/外边距
+$spacing-extra-tight: 4px         # 间距 - 超紧凑尺寸内/外边距
+$spacing-tight: 8px               # 间距 - 紧凑尺寸内/外边距
+$spacing-base-tight: 12px         # 间距 - 默认（偏紧凑）尺寸内/外边距
+$spacing-base: 16px               # 间距 - 默认尺寸内/外边距
+$spacing-base-loose: 20px         # 间距 - 默认（偏宽松）尺寸内/外边距
+$spacing-loose: 24px              # 间距 - 宽松尺寸内/外边距
+$spacing-extra-loose: 32px        # 间距 - 超宽松尺寸内/外边距
+$spacing-super-loose: 40px        # 间距 - 极宽松尺寸内/外边距
 
 ## Z-Index
-$z-portal: 1                      # 抽象插槽
-$z-affix: 10                      # 固定位置元素
-$z-backtop: 10                    # 返回顶部
-$z-badge: 10                      # badge
-$z-table-fixed: 101               # table fixed column
-$z-modal: 1000                    # modal
-$z-modal-mask: 1000               # modal 遮罩
-$z-toast: 1010                    # toast
-$z-notification: 1010             # notification
-$z-popover: 1030                  # popover
+用来描述界面元素的前后顺序关系
+$z-portal: 1                      # 抽象插槽，适用于未经特殊定制的所有组件
+$z-affix: 10                      # 固定位置的页面元素 z-index
+$z-backtop: 10                    # 返回顶部 z-index
+$z-badge: 10                      # badge z-index
+$z-table-fixed: 101               # table fixed column z-index
+$z-modal: 1000                    # modal z-index
+$z-modal-mask: 1000               # modal 遮罩 z-index
+$z-toast: 1010                    # toast 组件 z-index
+$z-notification: 1010             # notification 组件 z-index
+$z-popover: 1030                  # popover 组件 z-index
 
 ## 动画 (Animation)
---semi-transition_duration-slowest: 0ms
---semi-transition_duration-slower: 0ms
---semi-transition_duration-slow: 0ms
---semi-transition_duration-normal: 0ms
---semi-transition_duration-fast: 0ms
---semi-transition_duration-faster: 0ms
---semi-transition_duration-fastest: 0ms
---semi-transition_duration-none: 0ms
+动画持续时间变量，目前所有动画时长都设置为 0ms（无动画效果）
+--semi-transition_duration-slowest: 0ms   # 最慢动画时长
+--semi-transition_duration-slower: 0ms    # 较慢动画时长
+--semi-transition_duration-slow: 0ms      # 慢动画时长
+--semi-transition_duration-normal: 0ms    # 正常动画时长
+--semi-transition_duration-fast: 0ms      # 快动画时长
+--semi-transition_duration-faster: 0ms    # 较快动画时长
+--semi-transition_duration-fastest: 0ms   # 最快动画时长
+--semi-transition_duration-none: 0ms      # 无动画
+
 
 ## 使用说明
 # 1. CSS变量使用 var() 函数调用，如: color: var(--semi-color-primary);
-//# 2. SCSS变量直接使用，如: font-size: $font-size-regular;
-# 2. 基础色变量格式: --semi-{color}-{level}，其中level为0-9
+# 2. SCSS变量直接使用，如: font-size: $font-size-regular;
+# 3. 基础色变量格式: --semi-{color}-{level}，其中level为0-9
+# 4. 特别地，对于有暗色模式需求的平台，需要使用 Semi Design 的颜色变量才能实现一键切换明暗色的效果
