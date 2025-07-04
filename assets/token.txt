@@ -191,7 +191,5 @@ $z-popover: 1030                  # popover
 
 ## 使用说明
 # 1. CSS变量使用 var() 函数调用，如: color: var(--semi-color-primary);
-# 2. SCSS变量直接使用，如: font-size: $font-size-regular;
-# 3. 基础色变量格式: --semi-{color}-{level}，其中level为0-9
-# 4. 支持明暗模式切换，使用Semi Design变量可实现一键切换
-# 5. 可通过 Semi DSM 定制主题和变量值
+//# 2. SCSS变量直接使用，如: font-size: $font-size-regular;
+# 2. 基础色变量格式: --semi-{color}-{level}，其中level为0-9
